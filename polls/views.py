@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Question
 
 # Create your views here.
 def index(request):
@@ -10,3 +11,9 @@ def index(request):
 
 def getUser(request):
     return HttpResponse("<h1>Get all User vote</h1>")
+
+def viewList(request):
+    list_question = Question.objects.all()
+    context = {"dsquest": list_question}
+
+    return render(request, "polls/question_list.html", context)
