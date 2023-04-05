@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{%  extends 'polls/base.html'       %}
+{%  block content123    %}
 <h1>Hello Index page templates</h1>
 <h1>My name is {{name}}</h1>
 <h3>My Skill:</h3>
 <ul>
-     {% for item in mySkill %}
-    <li>{{ item }}</li>
+    {% for item in mySkill %}
+        {%  if item != "Python"    %}
+            <li>{{ item }}</li>
+        {%  endif %}
     {% endfor %}
 </ul>
 
-</body>
-</html>
+{%  endblock  %}
