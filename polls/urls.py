@@ -18,6 +18,7 @@ from . import views
 from django.urls import path
 
 urlpatterns = [
-    path('', views.index),
+    path('list_qs', views.viewList, name='view_index'),
+    path('', views.index, name='index'),
     path('getuser/', views.getUser),
 ]
